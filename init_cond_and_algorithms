@@ -5,7 +5,7 @@ start_time = time.time()
 # Defining the default parameters
 m, k = 1, 1
 n_steps = 1000
-delta_t = 0.05
+delta_t = 9E-17
 method = "euler"
 
 # Gathering information from markers
@@ -36,29 +36,35 @@ for i in opts:
         else:
             print("Method incorrect. Select \"verlet\", \"leapfrog\" or \"euler\"")
             quit()
+    elif i == "-plot":
+        x_plot = str(val)
+        y_plot = str(sys.argv[sys.argv.index(i)+2])
+        if x_plot not in params or y_plot not in params:
+            print("Incorrect name of the parameter to plot.")
+            quit()
     else:
         print("Marker incorrect. Try \"-m\" for mass, \"-k\" for oscillator constant, \"-x0\" for initial position, \"-p0\" for initial momentum, \"-n_steps\" for number of simulation steps, \"-delta_t\" for time step or \"-method\" for algorithm.")
         quit()
 
 
 # Defining the algorithms
-def F(x):
+def F(x, k):
     return -k * x
 
-def verlet(xn, pn, Fn, delta_t):
+def verlet(xn, pn, Fn, delta_t, m, k):
     xn1 = xn + pn * delta_t / m + Fn * delta_t**2 / (2*m)
-    Fn1 = F(xn1)
+    Fn1 = F(xn1, k)
     pn1 = pn + (Fn1 + Fn) * delta_t / 2
     return(xn1, pn1, Fn1)
 
-def leap_frog(xn, pn_minus_pol, delta_t):
-    Fn = F(xn)
+def leap_frog(xn, pn_minus_pol, delta_t, m, k):
+    Fn = F(xn, k)
     pn_pol = pn_minus_pol + Fn * delta_t
     xn1 = xn + 1/m * pn_pol * delta_t
     return(xn1, pn_pol)
 
-def euler(xn, pn, delta_t):
-    Fn = F(xn)
+def euler(xn, pn, delta_t, m, k):
+    Fn = F(xn, k)
     xn1 = xn + pn * delta_t / m + Fn * delta_t**2 / (2*m)
     pn1 = pn + Fn * delta_t
     return(xn1, pn1)
