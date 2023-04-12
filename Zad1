@@ -5,6 +5,7 @@ import time
 
 # Running the given algorithm
 xn, pn = 1, 0
+# x_plot, y_plot = 0, 0
 x_list = []
 p_list = []
 t_list = []
@@ -55,6 +56,7 @@ def plotter(y, z):
     plt.ylabel(z['label'])
     plt.show()
     plt.clf()
+
 
 plotter(t, x)
 plt.savefig("x_on_t")
