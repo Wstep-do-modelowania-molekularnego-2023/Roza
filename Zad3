@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-import init_cond_and_algorythms as algs
+import init_cond_and_algorithms as algs
 import numpy as np
 
 
