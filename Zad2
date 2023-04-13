@@ -5,7 +5,7 @@ import math
 
 # Defining time steps basing on oscillation period
 xn, pn = 1, 0
-T = 2 * math.pi * math.sqrt(algs.m / algs.k)
+T = 2 * math.pi * math.sqrt(algs.M / algs.K)
 sim_time = T * 10
 Fn = algs.F(xn)
 
@@ -22,7 +22,7 @@ if algs.method == "verlet":
             x_list.append(xn)
             p_list.append(pn)
             t_list.append(i * delta_t)
-            E = pn ** 2 / (2 * algs.m) + algs.k * xn ** 2 / 2
+            E = pn ** 2 / (2 * algs.M) + algs.k * xn ** 2 / 2
             E_list.append(E)
             E_mean = E_mean * i / (i+1) + E * 1 / (i+1)
             xn1, pn1, Fn1 = algs.verlet(xn, pn, Fn, delta_t)
@@ -68,7 +68,7 @@ elif algs.method == "euler":
             x_list.append(xn)
             p_list.append(pn)
             t_list.append(i * delta_t)
-            E = pn ** 2 / (2 * algs.m) + algs.k * xn ** 2 / 2
+            E = pn ** 2 / (2 * algs.M) + algs.K * xn ** 2 / 2
             E_list.append(E)
             E_mean = E_mean * i / (i+1) + E * 1 / (i+1)
             xn1, pn1 = algs.euler(xn, pn, delta_t)
