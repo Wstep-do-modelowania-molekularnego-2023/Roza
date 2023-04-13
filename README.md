@@ -11,7 +11,6 @@ Super, zaliczone + zrobiłaś i dla Eulera, i dla Verleta.
 
 ## Zad 3.
 Zaliczyłem!
-<ol>
-    <li> ~~Jest błąd w imporcie "init_cond_and_algor**Y**thms"~~</li>
-    <li> ~~Przekazujesz funkcji F dwa parametry, a ona przyjmuje tylko jeden.~~</li>
-</ol>
+~~Jest błąd w imporcie `init_cond_and_algorithms`~~
+~~Przekazujesz funkcji F dwa parametry, a ona przyjmuje tylko jeden.~~
+
