@@ -51,7 +51,7 @@ elif algs.method == "euler":
         xn = xn1
         pn = pn1
     period = sum([equil[i+2] - equil[i] for i in range(0, len(equil)- 2)]) / (len(equil)- 2)
-    print("Frequency = ", 1 / period, "Hz")
+    print("Frequency = {:.2e} Hz".format(1 / period))
 
 
 # Plotting a selected dependence
