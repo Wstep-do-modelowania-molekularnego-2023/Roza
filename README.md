@@ -10,7 +10,7 @@ Super, zaliczone + zrobiłaś i dla Eulera, i dla Verleta, i dla Leapfroga.
 Super, zaliczone + zrobiłaś i dla Eulera, i dla Verleta.
 
 ## Zad 3.
-Zaliczyłem!
-~~Jest błąd w imporcie `init_cond_and_algorithms`~~
+Zaliczyłem!\\
+~~Jest błąd w imporcie `init_cond_and_algorithms`~~\\
 ~~Przekazujesz funkcji F dwa parametry, a ona przyjmuje tylko jeden.~~
 
