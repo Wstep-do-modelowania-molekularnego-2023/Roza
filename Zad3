@@ -4,6 +4,7 @@ import numpy as np
 
 
 m, k = 1.139E-26, 1860
+delta_t = 9E-17
 xn, pn = 1, 0
 x_list = []
 p_list = []
@@ -16,8 +17,8 @@ if algs.method == "verlet":
     for i in range (0, algs.n_steps):
         x_list.append(xn)
         p_list.append(pn)
-        t_list.append(i * algs.delta_t)
-        xn1, pn1, Fn1 = algs.verlet(xn, pn, Fn, algs.delta_t, m, k)
+        t_list.append(i * delta_t)
+        xn1, pn1, Fn1 = algs.verlet(xn, pn, Fn, delta_t, m, k)
         if i > 2 and np.sign(xn1) != np.sign(xn):
             equil.append(abs((t_list[-1] + t_list[-2]) / 2))
         xn = xn1
@@ -27,12 +28,12 @@ if algs.method == "verlet":
     print("Frequency = ", 1 / period, "Hz")
 
 elif algs.method == "leapfrog":
-    pn_minus_pol = pn - Fn * algs.delta_t / 2
+    pn_minus_pol = pn - Fn * delta_t / 2
     for i in range (0, algs.n_steps):
         x_list.append(xn)
         p_list.append(pn_minus_pol)
-        t_list.append(i * algs.delta_t)
-        xn1, pn_pol = algs.leap_frog(xn, pn_minus_pol, algs.delta_t, m, k)
+        t_list.append(i * delta_t)
+        xn1, pn_pol = algs.leap_frog(xn, pn_minus_pol, delta_t, m, k)
         if i > 2 and np.sign(xn1) != np.sign(xn):
             equil.append(abs((t_list[-1] + t_list[-2]) / 2))
         xn = xn1
@@ -44,8 +45,8 @@ elif algs.method == "euler":
     for i in range(0, algs.n_steps):
         x_list.append(xn)
         p_list.append(pn)
-        t_list.append(i * algs.delta_t)
-        xn1, pn1 = algs.euler(xn, pn, algs.delta_t, m, k)
+        t_list.append(i * delta_t)
+        xn1, pn1 = algs.euler(xn, pn, delta_t, m, k)
         if i > 2 and np.sign(xn1) != np.sign(xn):
             equil.append(abs((t_list[-1] + t_list[-2]) / 2))
         xn = xn1
@@ -69,3 +70,4 @@ def plotter(y, z):
 
 
 plotter(t, x)
+
