@@ -14,3 +14,5 @@ Zaliczyłem!\
 ~~Jest błąd w imporcie `init_cond_and_algorithms`~~\
 ~~Przekazujesz funkcji F dwa parametry, a ona przyjmuje tylko jeden.~~
 
+## Zad 4.
+Super, zaliczam wraz z extra bardziej ambitnym zadaniem.
