@@ -16,3 +16,10 @@ Zaliczyłem!\
 
 ## Zad 4.
 Super, zaliczam wraz z extra bardziej ambitnym zadaniem.
+
+## Zad 5.
+Super! Zaliczam. Warto zwrócić uwagę, że dla metody 1) wyniki się bardzo różnią wraz z każdym uruchomieniem programu.
+Można zwiększyć liczbę iteracji w metodzie pierwszej (10-krotnie? 100-krotnie?) i sprawdzić czy rozkład się stabilizuje.
+
+## Zad 6.
+Też fajnie, zaliczam, ale jeszcze proszę o zagęszczenie binów w histogramie.
