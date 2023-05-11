@@ -62,7 +62,7 @@ def counter(list, min, max):
             ctr += 1
     return ctr
 
-bars = np.linspace(-2.5, 2.5, 10)
+bars = np.linspace(-2.5, 2.5, 30)
 x_freq = [counter(x_mc, i, i+1) for i in bars]
 max_freq = max(x_freq)
 x_freq = [i / max_freq for i in x_freq]
